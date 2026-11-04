@@ -64,7 +64,9 @@ console.log(playerList[1].favorites[1]);
 
 let totalAge = 0;
 
+// 初期値はi=0で、playerListの要素数分のi++を繰り返す
 for (let i = 0; i < playerList.length; i++) {
+  // totalAge=totalAge + playerList[i].age;
   totalAge += playerList[i].age;
 }
 
@@ -113,6 +115,7 @@ user.sayHello();
 // 2つの引数x,yの積をコンソールに出力するmultiplyメソッドを定義し、49になるように実行して下さい。
 // 2つの引数x,yの商をコンソールに出力するdivideメソッドを定義し、5になるように実行して下さい。
 
+// 外側の{}がオブジェクトリテラル、内側の{}がメソッドの処理内容を表す。
 let calc = {
   add(x, y) {
     return x + y;
@@ -143,7 +146,7 @@ const remainder = (x, y) => {
   return x % y;
 };
 
-console.log(remainder(5, 3));
+console.log("5 を 3 で割った余りは " + remainder(5, 3) + " です。");
 
 // Q10.下記のconsole.log(x);においてコンソールに1が出力されることはなく、
 // x is not defined（変数xが定義されていない）というエラーが出力されます。
@@ -181,9 +184,9 @@ setTimeout(greet, 3000);
 // Q3.変数numに任意の数値を代入し、
 // 下記条件のもと文字列をコンソールに出し分ける処理を作成してください。
 
-// numが0/より大きければnum is greater than 0
-// numが0より小さけれ ばnum is less than 0
-// numが0であればnum is 0
+// numが0より大きければ num is greater than 0
+// numが0より小さければ num is less than 0
+// numが0であれば num is 0
 
 const num = 0;
 if (num > 0) {
@@ -197,20 +200,25 @@ if (num > 0) {
 // else if を用いる場合は三項演算子よりも実際に書いたほうがいい。
 // 三項演算子はシンプルなif文でアロー関数などに用いることが多い。
 
-const numReturn =
-  num > 0
-    ? "num is greater than 0"
-    : num < 0
-      ? "num is less than 0"
-      : "num is 0";
-console.log(numReturn);
+// const numReturn =
+//   num > 0
+//     ? "num is greater than 0"
+//     : num < 0
+//       ? "num is less than 0"
+//       : num === 0
+//         ? "num is 0"
+//         : "undefined";
+// console.log(numReturn);
 
 // Q4.変数 numbers に空の配列を代入した後、
 // 0 ~ 99 までの数字を変数 numbers に全て追加し、
 // 値が追加された状態の変数 numbers をコンソールに出力してください
 
+// 最初は空の配列を作成
 const numbers = [];
 
+// i=0が初期値。numbers配列にiを追加していく。
+// 最初は0が追加される。i++で1ずつ増えていく。i<100の条件で99まで繰り返す。
 for (let i = 0; i < 100; i++) {
   numbers.push(i);
 }
@@ -238,8 +246,8 @@ for (const mix of mixed) {
 
 // 三項演算子ver
 
-for (const mix of mixed) {
-  console.log(
-    typeof mix !== "number" ? "not number" : mix % 2 === 0 ? "even" : "odd",
-  );
-}
+// for (const mix of mixed) {
+//   console.log(
+//     typeof mix !== "number" ? "not number" : mix % 2 === 0 ? "even" : "odd",
+//   );
+// }
